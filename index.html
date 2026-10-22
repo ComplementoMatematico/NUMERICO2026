@@ -417,10 +417,10 @@
     </div>
   </div>
   <div class="accesos">
-    <a class="acceso" href="#apuntes"><div class="cab">Apuntes del curso</div>
-      <p>El documento completo (44 páginas): léalo aquí mismo o descárguelo en PDF.</p></a>
+    <a class="acceso" href="#apuntes"><div class="cab">Apuntes y guía de laboratorio</div>
+      <p>Los apuntes completos (44 páginas) y la guía de laboratorio de Robin: léalos aquí mismo o descárguelos en PDF.</p></a>
     <a class="acceso" href="#compilador"><div class="cab">Compilador FreeFEM</div>
-      <p>Escriba y compile la tarea del script 1 y ejecute el experimento de convergencia del script 2, con gráficos y tabla de órdenes.</p></a>
+      <p>Los dos scripts de la guía de laboratorio: complete y compile el de la Parte C y ejecute la convergencia en el disco de la Parte D, con gráficos y tabla de órdenes.</p></a>
   </div>
 </section>
 
@@ -428,7 +428,7 @@
      APUNTES
      ================================================================ -->
 <section class="seccion" id="apuntes">
-  <h2>Apuntes del curso</h2>
+  <h2>Apuntes y guía de laboratorio</h2>
   <div class="caja">
     <div class="cab">Introducción al Método de Elementos Finitos · EPRIMA 2026</div>
     <div class="cuerpo">
@@ -450,7 +450,8 @@
             <li><strong>Unidad V.</strong> Implementación computacional en FreeFEM++.</li>
           </ul>
           <div class="barra" style="margin:0">
-            <button class="primario" type="button" id="btn-ver-pdf" aria-expanded="false" aria-controls="visor-pdf">Ver apuntes aquí</button>
+            <button class="primario btn-ver" type="button" id="btn-ver-pdf" aria-expanded="false" aria-controls="visor-pdf"
+                    data-pdf="apuntes_eprima2026.pdf" data-ver="Ver apuntes aquí" data-ocultar="Ocultar apuntes">Ver apuntes aquí</button>
             <a class="btn" href="apuntes_eprima2026.pdf" download="apuntes_eprima2026.pdf">Descargar PDF</a>
             <a class="btn" href="apuntes_eprima2026.pdf" target="_blank" rel="noopener">Abrir en pestaña nueva</a>
           </div>
@@ -464,6 +465,42 @@
       </div>
     </div>
   </div>
+
+  <div class="caja">
+    <div class="cab">Guía de laboratorio · Reacción–difusión con condición de Robin</div>
+    <div class="cuerpo">
+      <div class="ficha">
+        <div class="portadilla" aria-hidden="true">
+          <span>EPRIMA 2026</span>
+          <i style="margin-top:30px">Laboratorio de elementos finitos</i>
+          <b>Reacción–difusión estacionaria con condición de Robin</b>
+          <i style="margin-top:6px">Prof. Dr. Eligio Colmenares</i>
+        </div>
+        <div>
+          <h3>Guía de trabajo para después de la clase</h3>
+          <p class="meta">PDF · 4 páginas · se desarrolla con los apuntes y el compilador de esta página</p>
+          <ul>
+            <li><strong>Parte A.</strong> Formulación variacional y análisis continuo (Lax–Milgram).</li>
+            <li><strong>Parte B.</strong> Aproximación conforme y lema de Céa.</li>
+            <li><strong>Parte C.</strong> Primer experimento: ensamblaje y solución en (0,1)².</li>
+            <li><strong>Parte D.</strong> Condición de Robin y experimento de convergencia en el disco unitario.</li>
+          </ul>
+          <div class="barra" style="margin:0">
+            <button class="primario btn-ver" type="button" id="btn-ver-guia" aria-expanded="false" aria-controls="visor-guia"
+                    data-pdf="Guia_Laboratorio_Robin_EPRIMA2026.pdf" data-ver="Ver guía aquí" data-ocultar="Ocultar guía">Ver guía aquí</button>
+            <a class="btn" href="Guia_Laboratorio_Robin_EPRIMA2026.pdf" download="Guia_Laboratorio_Robin_EPRIMA2026.pdf">Descargar PDF</a>
+            <a class="btn" href="Guia_Laboratorio_Robin_EPRIMA2026.pdf" target="_blank" rel="noopener">Abrir en pestaña nueva</a>
+          </div>
+        </div>
+      </div>
+      <div class="visor" id="visor-guia" hidden>
+        <iframe title="Guía de laboratorio Robin EPRIMA 2026 (PDF)"></iframe>
+        <p class="nota-visor">Si su navegador no muestra el documento (frecuente en teléfonos), use
+          <a href="Guia_Laboratorio_Robin_EPRIMA2026.pdf" target="_blank" rel="noopener">Abrir en pestaña nueva</a> o
+          <a href="Guia_Laboratorio_Robin_EPRIMA2026.pdf" download>Descargar PDF</a>.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ================================================================
@@ -473,25 +510,25 @@
   <h2>Compilador FreeFEM</h2>
   <p>
     Un compilador <strong>FreeFEM JS</strong> (FreeFEM v3.5 compilado a JavaScript) que funciona en su propio navegador,
-    sin instalar nada. En la <strong>tarea</strong> usted escribe el script 1 desde cero y lo compila; el <strong>script 2</strong>
-    viene completo para estudiar la convergencia. El cálculo corre en un proceso aparte y puede detenerse con
+    sin instalar nada, con los dos scripts de la <strong>guía de laboratorio</strong>: en el <strong>script 1</strong> (Parte C)
+    complete los espacios C2–C4 y compile; el <strong>script 2</strong> (Parte D) ejecuta el experimento de convergencia en el
+    disco unitario con P1 y luego con P2. El cálculo corre en un proceso aparte y puede detenerse con
     <em>■ Detener</em> o recargando la página. La primera ejecución descarga el motor (≈ 17,7 MB).
   </p>
 
   <div class="pestanas" role="tablist" aria-label="Scripts de los apuntes">
     <button type="button" class="pestana" role="tab" id="tab-s1" aria-selected="true" data-script="s1">
-      Tarea · Script 1: ensamblaje y resolución<small>Apuntes §6.2–6.4 · escriba y compile su propio código</small>
+      Script 1 · Parte C: ensamblaje y solución<small>Guía de laboratorio · complete C2, C3 y C4 · ≈ 1 s</small>
     </button>
     <button type="button" class="pestana" role="tab" id="tab-s2" aria-selected="false" data-script="s2">
-      Script 2 · Errores y órdenes<small>Apuntes §6.6 · solución manufacturada · ≈ 1–2 min (versión rápida ≈ 15 s)</small>
+      Script 2 · Parte D: convergencia en el disco<small>Guía de laboratorio · P1 y luego P2 · ≈ 5–10 s</small>
     </button>
   </div>
   <p class="descripcion-script" id="descripcion"></p>
 
   <div class="barra">
     <button class="primario" type="button" id="btn-ejecutar">▶ Ejecutar</button>
-    <button type="button" id="btn-rapida" hidden>Versión rápida (nref = 4)</button>
-    <button type="button" id="btn-p1" hidden>Cambiar a P1</button>
+    <button type="button" id="btn-grado">Usar P2</button>
     <button type="button" id="btn-restaurar">Restaurar script</button>
     <button type="button" data-copiar="editor">Copiar</button>
     <button type="button" data-descargar="editor">Descargar .edp</button>
@@ -559,52 +596,95 @@
   <div class="banda-final"></div>
 </footer>
 
-<!-- Scripts de la Unidad V de los apuntes -->
+<!-- Scripts de la guía de laboratorio (Partes C y D) -->
+<script type="text/plain" id="fuente-s1">
+// Datos del problema
+func hh = 2*x;
+func f = y*sin(x^2+y)-3;
+int n = 10;
+
+// Malla
+mesh Th = square(n,n);
+plot(Th);
+
+// Espacio de elementos finitos
+fespace Vh(Th, P1);       // C1: probar P1 y P2
+Vh uh,vh;
+
+// Forma bilineal y matriz de rigidez
+varf a(uh,vh) =
+    int2d(Th)(dx(uh)*dx(vh)+dy(uh)*dy(vh))
+  + int2d(Th)( /* COMPLETAR C2 */ )
+  + int1d(Th,1,2,3,4)( /* COMPLETAR C3 */ );
+matrix KK = a(Vh,Vh);
+
+// Funcional y vector de cargas
+varf b(uh,vh) =
+    int2d(Th)( /* COMPLETAR C4 */ )
+  + int1d(Th,1,2,3,4)(hh*vh);
+real[int] bb = b(0,Vh);
+
+// Sistema algebraico
+uh[] = KK^-1*bb;
+plot(uh,fill=true,value=true,wait=1);
+</script>
 <script type="text/plain" id="fuente-s2">
+// Parte D: -Delta u + u = f en el disco unitario,
+//          dn(u) + u = hh sobre la circunferencia
+// Solucion exacta u = sin(x^2+y^2-1): u = 0 y dn(u) = 2 en |x| = 1
+
 // 1. Arreglos y datos del experimento
-int nref = 5;
+int nref = 3;
 real[int] hsizes(nref), dim(nref);
 real[int] errorL2(nref), errorH1(nref);
-int[int] sizes = [8,16,32,64,128];
+int[int] sizes = [30,60,120];
 
 // 2. Macros
 macro grad(u) [dx(u),dy(u)] //
 
-// 3. Refinamiento sucesivo
+// 3. Frontera: circunferencia unitaria
+border GammaR(t=0,2*pi){
+    x=cos(t); y=sin(t); label=1;
+};
+
+// 4. Refinamiento sucesivo
 for (int n = 0; n < nref; n++)
 {
  // Solucion exacta y derivadas
- func uexacta = sin(pi*x)*sin(pi*y);
- func ux = pi*cos(pi*x)*sin(pi*y);
- func uy = pi*sin(pi*x)*cos(pi*y);
+ func uexacta = sin(x^2+y^2-1);
+ func ux = 2*x*cos(x^2+y^2-1);
+ func uy = 2*y*cos(x^2+y^2-1);
+ func uxx = 2*cos(x^2+y^2-1) - 4*x^2*sin(x^2+y^2-1);
+ func uyy = 2*cos(x^2+y^2-1) - 4*y^2*sin(x^2+y^2-1);
 
- // Datos manufacturados: -Delta u+u=f,
- //                       dn(u)+u=hh
- func f = (2*pi^2+1)*uexacta;
+ // Datos manufacturados: -Delta u+u=f,  dn(u)+u=hh
+ func f = -(uxx+uyy)+uexacta;
+ func hh = 2.;
 
  // Malla y espacio discreto
- mesh Th = square(sizes[n],sizes[n]);
+ mesh Th = buildmesh(GammaR(sizes[n]));
  hsizes[n] = Th.hmax;
- fespace Vh(Th,P2);
+ fespace Vh(Th,P1);   // D3: luego sustituir P1 por P2
  Vh uh,vh;
  dim[n] = Vh.ndof;
 
- // Matriz de rigidez (solver directo: con GMRES, el solver por defecto de
- // FreeFEM JS, el error algebraico contamina el error L2 en mallas finas)
+ // Matriz de rigidez (los terminos de la parte C; Robin con int1d(Th,1))
+ // Solver directo: con GMRES, el solver por defecto de FreeFEM JS,
+ // el error algebraico contamina el error en mallas finas
  varf a(uh,vh) =
  int2d(Th)(grad(uh)'*grad(vh)+uh*vh)
- + int1d(Th,1,2,3,4)(uh*vh);
+ + int1d(Th,1)(uh*vh);
  matrix KK = a(Vh,Vh,solver=sparsesolver);
 
  // Vector de cargas
  varf b(uh,vh) =
  int2d(Th)(f*vh)
- + int1d(Th,1,2,3,4)(
- (N.x*ux+N.y*uy+uexacta)*vh);
+ + int1d(Th,1)(hh*vh);
  real[int] bb = b(0,Vh);
 
  // Solucion discreta
  uh[] = KK^-1*bb;
+ if (n == nref-1) plot(uh,fill=true,value=true,cmm="Solucion en la malla mas fina");
 
  // Cuadrados de errores, luego normas
  real e0sq = int2d(Th)((uexacta-uh)^2);
@@ -614,7 +694,7 @@ for (int n = 0; n < nref; n++)
  errorH1[n] = sqrt(e0sq+e1sq);
 }
 
-// 4. Errores y ordenes experimentales
+// 5. Errores y ordenes experimentales
 for (int n = 0; n < nref; n++)
 {
  cout << "N = " << dim[n]
@@ -640,20 +720,19 @@ for (int n = 1; n < nref; n++)
    ===================================================================== */
 const SCRIPTS = {
   s1: {
-    codigo: '',                       // tarea: el estudiante escribe el código desde cero
-    archivo: 'tarea_script1.edp',
-    tarea: true,
-    descripcion: 'Tarea: escriba un script en FreeFEM que resuelva −Δu + u = f en Ω = (0,1)² con condición de Robin ' +
-                 '∂u/∂n + u = r sobre Γ, donde f(x,y) = y·sin(x² + y) − 3 y r(x,y) = 2x, usando elementos de Lagrange P2 en una ' +
-                 'malla de 10×10. El programa debe ensamblar la matriz de rigidez KK y el vector de cargas bb, resolver KKα = bb ' +
-                 'y graficar la malla y la solución. Su avance se guarda automáticamente en este navegador.'
+    codigo: document.getElementById('fuente-s1').textContent.replace(/^\n/, ''),
+    archivo: 'lab_script1_robin.edp',
+    descripcion: 'Parte C de la guía: −Δu + u = f en (0,1)² con ∂u/∂n + u = r, donde f(x,y) = y·sin(x² + y) − 3 y r(x,y) = 2x. ' +
+                 'Complete los integrandos marcados /* COMPLETAR C2 */ (reacción), /* COMPLETAR C3 */ (término de Robin) y ' +
+                 '/* COMPLETAR C4 */ (dato volumétrico) y pulse ▶ Ejecutar. Luego pruebe P2 (C3), n = 20 (C4) y hh = 0 (C5). ' +
+                 'Su avance se guarda automáticamente en este navegador.'
   },
   s2: {
     codigo: document.getElementById('fuente-s2').textContent.replace(/^\n/, ''),
-    archivo: 'script2_convergencia.edp',
-    descripcion: 'Experimento de convergencia con la solución manufacturada u = sin(πx)sin(πy): resuelve en cinco mallas ' +
-                 '(8 a 128 subdivisiones), calcula los errores en L² y H¹ y los órdenes experimentales. Con P2 se esperan ' +
-                 'órdenes ≈ 3 en L² y ≈ 2 en H¹. La única diferencia con los apuntes es solver = sparsesolver (ver el comentario en el código).'
+    archivo: 'lab_script2_disco.edp',
+    descripcion: 'Parte D de la guía: −Δu + u = f en el disco unitario con ∂u/∂n + u = 2 y solución exacta u = sin(x² + y² − 1). ' +
+                 'Resuelve en tres mallas (30, 60 y 120 puntos sobre la circunferencia), calcula los errores en L² y H¹ y los ' +
+                 'órdenes experimentales. Ejecute primero con P1 y luego con P2 para completar la tabla D4.'
   }
 };
 let actual = 's1';
@@ -699,7 +778,7 @@ editor.addEventListener('keydown', e => {
 
 /* Borradores: lo que cada estudiante escribe se conserva al cambiar de pestaña (memoria) y,
    si el navegador lo permite, también al recargar la página (localStorage) */
-const CLAVE_BORRADOR = id => 'eprima2026-apuntes-borrador-' + id;
+const CLAVE_BORRADOR = id => 'eprima2026-laboratorio-borrador-' + id;
 const borradores = {};
 function leerBorrador(id) {
   if (id in borradores) return borradores[id];
@@ -721,54 +800,60 @@ editor.addEventListener('input', () => {
 });
 
 /* Pestañas de scripts */
-const btnRapida = document.getElementById('btn-rapida');
-const btnP1 = document.getElementById('btn-p1');
+let iniciado = false;                 // evita guardar como borrador el editor vacío al cargar la página
+const btnGrado = document.getElementById('btn-grado');
 const btnRestaurar = document.getElementById('btn-restaurar');
+const RE_GRADO = /(fespace\s+Vh\s*\(\s*Th\s*,\s*)P([12])(\s*\))/g;
+function actualizarBotonGrado() {
+  const m = editor.value.match(/fespace\s+Vh\s*\(\s*Th\s*,\s*P([12])\s*\)/);
+  btnGrado.hidden = !m;
+  if (m) btnGrado.textContent = m[1] === '1' ? 'Usar P2' : 'Usar P1';
+}
+editor.addEventListener('input', actualizarBotonGrado);
+btnGrado.addEventListener('click', () => {
+  const m = editor.value.match(/fespace\s+Vh\s*\(\s*Th\s*,\s*P([12])\s*\)/);
+  if (!m) return;
+  const nuevo = m[1] === '1' ? '2' : '1';
+  editor.value = editor.value.replace(RE_GRADO, (t, a, k, b) => a + 'P' + nuevo + b);
+  guardarBorrador(actual, editor.value);
+  actualizarBotonGrado();
+  editor.focus();
+});
 function seleccionar(id) {
   if (ejecutando) detenerEjecucion();
   clearTimeout(temporizadorBorrador);
-  if (editor.value !== SCRIPTS[actual].codigo) guardarBorrador(actual, editor.value);
+  if (iniciado && editor.value !== SCRIPTS[actual].codigo) guardarBorrador(actual, editor.value);
+  iniciado = true;
   actual = id;
   const s = SCRIPTS[id];
   document.querySelectorAll('.pestana').forEach(p => p.setAttribute('aria-selected', String(p.dataset.script === id)));
   document.getElementById('descripcion').textContent = s.descripcion;
   const borrador = leerBorrador(id);
   editor.value = borrador !== null ? borrador : s.codigo;
-  editor.placeholder = s.tarea
-    ? '// Escriba aquí su script de FreeFEM y pulse ▶ Ejecutar.\n// Sugerencia: siga la estructura de las secciones 6.2 y 6.3 de los apuntes\n// (datos, malla, espacio P2, forma bilineal, vector de cargas, resolución y gráficos).'
-    : '';
-  btnRestaurar.textContent = s.tarea ? 'Borrar todo' : 'Restaurar script';
-  btnRapida.hidden = id !== 's2';
-  btnP1.hidden = id !== 's2';
+  actualizarBotonGrado();
   limpiarResultados();
 }
 document.querySelectorAll('.pestana').forEach(p => p.addEventListener('click', () => seleccionar(p.dataset.script)));
 btnRestaurar.addEventListener('click', () => {
-  if (SCRIPTS[actual].tarea && editor.value.trim() && !confirm('¿Borrar todo el código que ha escrito?')) return;
+  if (editor.value !== SCRIPTS[actual].codigo &&
+      !confirm('¿Volver al script original de la guía? Se perderán sus cambios.')) return;
   editor.value = SCRIPTS[actual].codigo;
   borrarBorrador(actual);
-  editor.focus();
-});
-btnRapida.addEventListener('click', () => {
-  editor.value = editor.value.replace(/int nref = \d+;/, 'int nref = 4;');
-  editor.focus();
-});
-btnP1.addEventListener('click', () => {
-  editor.value = editor.value.replace(/fespace Vh\(Th,P2\);/g, 'fespace Vh(Th,P1);');
+  actualizarBotonGrado();
   editor.focus();
 });
 
-/* Visor del PDF: se carga solo cuando se pide */
-const btnVerPdf = document.getElementById('btn-ver-pdf');
-const visor = document.getElementById('visor-pdf');
-btnVerPdf.addEventListener('click', () => {
+/* Visores de PDF (apuntes y guía): cada documento se carga solo cuando se pide */
+document.querySelectorAll('.btn-ver').forEach(boton => boton.addEventListener('click', () => {
+  const visor = document.getElementById(boton.getAttribute('aria-controls'));
+  const marcoPdf = visor.querySelector('iframe');
   const abrir = visor.hidden;
-  if (abrir && !document.getElementById('marco-pdf').src) document.getElementById('marco-pdf').src = 'apuntes_eprima2026.pdf#view=FitH';
+  if (abrir && !marcoPdf.getAttribute('src')) marcoPdf.src = boton.dataset.pdf + '#view=FitH';
   visor.hidden = !abrir;
-  btnVerPdf.setAttribute('aria-expanded', String(abrir));
-  btnVerPdf.textContent = abrir ? 'Ocultar apuntes' : 'Ver apuntes aquí';
+  boton.setAttribute('aria-expanded', String(abrir));
+  boton.textContent = abrir ? boton.dataset.ocultar : boton.dataset.ver;
   if (abrir) visor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+}));
 
 /* =====================================================================
    FreeFEM JS en un iframe aislado (otro proceso): la página sigue
@@ -941,6 +1026,12 @@ async function ejecutar(codigo) {
   if (ejecutando) { detenerEjecucion(); return; }
   codigoEnCurso = typeof codigo === 'string' ? codigo : editor.value;
   if (!codigoEnCurso.trim()) { ponerEstado('Escriba su código en el editor antes de ejecutar.', 'err'); editor.focus(); return; }
+  const pendientes = [...new Set((codigoEnCurso.match(/COMPLETAR\s+C\d/g) || []).map(s => s.replace(/\s+/, ' ')))];
+  if (pendientes.length) {
+    ponerEstado('Faltan espacios por completar: ' + pendientes.join(', ') + '. Reemplace cada /* COMPLETAR ... */ por su integrando.', 'err');
+    const i = editor.value.indexOf('COMPLETAR'); if (i >= 0) { editor.focus(); editor.setSelectionRange(Math.max(0, i - 3), i + 15); }
+    return;
+  }
   modoBoton(true);
   salida = []; cuadros = [];
   consola.textContent = ''; selector.innerHTML = '';
@@ -950,7 +1041,12 @@ async function ejecutar(codigo) {
     if (!marco) { ponerEstado('Preparando FreeFEM JS…'); await crearMarco(); }
     if (!ejecutando) return;
     ponerEstado('Calculando… Puede detenerlo con ■ Detener o recargar con F5.');
-    marco.contentWindow.postMessage({ tipo: 'ejecutar', codigo: codigoEnCurso }, '*');
+    // La guía pide registrar los grados de libertad "si la plataforma lo muestra": en scripts sin ciclos
+    // que definen Vh, se agrega al final una línea que los imprime (no modifica el editor)
+    let codigoMotor = codigoEnCurso;
+    if (/fespace\s+Vh\s*\(/.test(codigoMotor) && !/\bfor\s*\(/.test(codigoMotor) && !/Vh\.ndof/.test(codigoMotor))
+      codigoMotor += '\ncout << "ndof = " << Vh.ndof << endl;';
+    marco.contentWindow.postMessage({ tipo: 'ejecutar', codigo: codigoMotor }, '*');
   } catch (e) {
     destruirMarco(); modoBoton(false);
     ponerEstado(e.message, 'err');
@@ -1019,13 +1115,25 @@ function mostrarResultados(texto) {
       '<div class="leyenda"><span><i style="background:#1B3A57"></i>E<sub>L²</sub></span>' +
       '<span><i style="background:#3D7AA8"></i>E<sub>H¹</sub> (norma completa)</span>' +
       '<span><i style="background:repeating-linear-gradient(90deg,#9aa4ae 0 4px,transparent 4px 7px)"></i>pendientes de referencia</span></div></div>';
+    const grado = (codigoEnCurso.match(/fespace\s+Vh\s*\(\s*Th\s*,\s*(P[12])\s*\)/) || [])[1];
+    if (grado || /buildmesh/.test(codigoEnCurso)) {
+      html += '<p class="resumen-solver" style="grid-column:1/-1;margin-top:10px">' +
+        (grado ? 'Resultados con <strong>' + grado + '</strong>. ' : '') +
+        (/buildmesh/.test(codigoEnCurso)
+          ? 'Atención a la geometría: <code class="in">buildmesh</code> aproxima la circunferencia por segmentos, lo que puede ' +
+            'limitar los órdenes observados (en particular en L² con P2).'
+          : '') + '</p>';
+    }
     cont.innerHTML = html;
     return;
   }
   const it = texto.match(/(GMRES|CG)\s+converges?:\s*(\d+)/i);
   const malla = [...texto.matchAll(/nb vertices\s*=\s*(\d+)\s*,\s*nb triangles\s*=\s*(\d+)/g)].pop();
+  const gdl = texto.match(/^ndof\s*=\s*(\d+)/m);
+  const grado = (codigoEnCurso.match(/fespace\s+Vh\s*\(\s*Th\s*,\s*(P[12])\s*\)/) || [])[1];
   let html = '<div class="vacio" style="text-align:left">Este script no calcula errores ni órdenes, así que no hay tabla.';
   if (malla) html += '<br><br><strong>Malla:</strong> ' + malla[1] + ' vértices y ' + malla[2] + ' triángulos.';
+  if (gdl) html += '<br><strong>Grados de libertad' + (grado ? ' (' + grado + ')' : '') + ':</strong> ' + gdl[1] + '.';
   if (it) html += '<br><strong>Sistema KK α = bb:</strong> resuelto con ' + it[1].toUpperCase() + ' en ' + it[2] + ' iteraciones.';
   if (cuadros.length) html += '<br><br>Use los botones bajo el gráfico para alternar entre la malla y la solución.';
   cont.innerHTML = html + '</div>';
